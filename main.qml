@@ -83,7 +83,7 @@ ApplicationWindow {
 
     //
 
-    header: SimpleTextTitle {
+    header: StackTextTitle {
         text: qsTr("A simple Stacked - Pages APP")
     }
 
