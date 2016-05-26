@@ -87,6 +87,21 @@ ApplicationWindow {
         text: qsTr("A simple Stacked - Pages APP")
     }
 
+    footer: Pane {
+        anchors.right: parent.right
+        RowLayout {
+            anchors.fill: parent
+            visible: navPane.depth < 5
+            FloatingActionButton {
+                anchors.right: parent.right
+                imageSource: "qrc:/images/"+iconOnPrimaryFolder+"/directions.png"
+                onClicked: {
+                    navPane.pushNextPage()
+                }
+            }
+        }
+    }
+
     StackView {
         id: navPane
         focus: true
@@ -111,6 +126,24 @@ ApplicationWindow {
         function pushOnePage(pageComponent) {
             var page = push(pageComponent)
             page.init()
+        }
+        function pushNextPage() {
+            switch(navPane.depth) {
+            case 1:
+                pushOnePage(pageTwo)
+                break;
+            case 2:
+                pushOnePage(pageThree)
+                break;
+            case 3:
+                pushOnePage(pageFour)
+                break;
+            case 4:
+                pushOnePage(pageFive)
+                break;
+            default:
+                // nothing
+            }
         }
     } // navPane
 
