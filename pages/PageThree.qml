@@ -20,20 +20,20 @@ Flickable {
             LabelHeadline {
                 leftPadding: 10
                 text: qsTr("Hello Three")
-                color: accentColor
             }
             HorizontalDivider {}
             RowLayout {
                 // implicite fillWidth = true
                 spacing: 20
-                ButtonRaised {
+                ButtonFlat {
                     text: "Push Four"
                     onClicked: {
                         navPane.pushOnePage(pageFour)
                     }
                 }
-                ButtonRaised {
+                ButtonFlat {
                     text: "Pop"
+                    textColor: accentColor
                     onClicked: {
                         navPane.popOnePage()
                     }

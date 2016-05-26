@@ -1,4 +1,4 @@
-# ekke (Ekkehard Gentz) @ekkescorner
+# ekke (Ekkehard Gentz) @ekkescorner s
 TEMPLATE = app
 TARGET = stacked_pages_x
 

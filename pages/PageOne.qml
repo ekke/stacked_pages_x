@@ -20,7 +20,6 @@ Flickable {
             LabelHeadline {
                 leftPadding: 10
                 text: qsTr("Hello Stack")
-                color: accentColor
             }
             HorizontalDivider {}
             RowLayout {

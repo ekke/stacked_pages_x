@@ -20,7 +20,6 @@ Flickable {
             LabelHeadline {
                 leftPadding: 10
                 text: qsTr("Hello Five")
-                color: accentColor
             }
             HorizontalDivider{}
             RowLayout {
@@ -31,8 +30,9 @@ Flickable {
                     Layout.preferredWidth : 1
                     Layout.fillWidth: true
                 }
-                ButtonRaised {
+                ButtonFlat {
                     text: "Pop"
+                    textColor: accentColor
                     onClicked: {
                         navPane.popOnePage()
                     }

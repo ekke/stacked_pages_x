@@ -27,5 +27,6 @@
         <file>pages/PageThree.qml</file>
         <file>pages/PageFive.qml</file>
         <file>common/ButtonRaised.qml</file>
+        <file>common/ButtonFlat.qml</file>
     </qresource>
 </RCC>
