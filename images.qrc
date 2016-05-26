@@ -1,0 +1,44 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/black/more_vert.png</file>
+        <file>images/black/more_vert@2x.png</file>
+        <file>images/black/more_vert@3x.png</file>
+        <file>images/black/more_vert@4x.png</file>
+        <file>images/white/more_vert.png</file>
+        <file>images/white/more_vert@2x.png</file>
+        <file>images/white/more_vert@3x.png</file>
+        <file>images/white/more_vert@4x.png</file>
+        <file>images/white/person.png</file>
+        <file>images/white/person@2x.png</file>
+        <file>images/white/person@3x.png</file>
+        <file>images/white/person@4x.png</file>
+        <file>images/black/person.png</file>
+        <file>images/black/person@2x.png</file>
+        <file>images/black/person@3x.png</file>
+        <file>images/black/person@4x.png</file>
+        <file>images/black/x36/person.png</file>
+        <file>images/black/x36/person@2x.png</file>
+        <file>images/black/x36/person@3x.png</file>
+        <file>images/black/x36/person@4x.png</file>
+        <file>images/white/x36/person.png</file>
+        <file>images/white/x36/person@2x.png</file>
+        <file>images/white/x36/person@3x.png</file>
+        <file>images/white/x36/person@4x.png</file>
+        <file>images/black/x18/person.png</file>
+        <file>images/black/x18/person@2x.png</file>
+        <file>images/black/x18/person@3x.png</file>
+        <file>images/black/x18/person@4x.png</file>
+        <file>images/black/x48/person.png</file>
+        <file>images/black/x48/person@2x.png</file>
+        <file>images/black/x48/person@3x.png</file>
+        <file>images/black/x48/person@4x.png</file>
+        <file>images/white/x18/person.png</file>
+        <file>images/white/x18/person@2x.png</file>
+        <file>images/white/x18/person@3x.png</file>
+        <file>images/white/x18/person@4x.png</file>
+        <file>images/white/x48/person.png</file>
+        <file>images/white/x48/person@2x.png</file>
+        <file>images/white/x48/person@3x.png</file>
+        <file>images/white/x48/person@4.png</file>
+    </qresource>
+</RCC>
