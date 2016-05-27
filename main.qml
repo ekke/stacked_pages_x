@@ -80,20 +80,21 @@ ApplicationWindow {
     property real opacityBodyAndButton: primaryTextOpacity
     property real opacityBodySecondary: secondaryTextOpacity
     property real opacityCaption: secondaryTextOpacity
-
     //
 
     header: StackTextTitle {
         text: qsTr("A simple Stacked - Pages APP")
     }
 
+    // primaryDarkColor is used because FAB can overlap Raised Buttons colored in primaryColor
     FloatingActionButton {
         property string imageName: navPane.depth < 5? "/directions.png" : "/home.png"
         z: 1
         anchors.margins: 16
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        imageSource: "qrc:/images/"+iconOnPrimaryFolder+imageName
+        imageSource: "qrc:/images/"+iconOnPrimaryDarkFolder+imageName
+        backgroundColor: primaryDarkColor
         onClicked: {
             if(navPane.depth < 5) {
                 navPane.pushNextPage()
