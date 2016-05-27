@@ -87,25 +87,21 @@ ApplicationWindow {
         text: qsTr("A simple Stacked - Pages APP")
     }
 
-    // open question: HowTo place FAB at bottom-right without overlapping space at left side
-    footer: Pane {
+    FloatingActionButton {
+        property string imageName: navPane.depth < 5? "/directions.png" : "/home.png"
+        z: 1
+        anchors.margins: 16
         anchors.right: parent.right
-        RowLayout {
-            anchors.fill: parent
-            FloatingActionButton {
-                property string imageName: navPane.depth < 5? "/directions.png" : "/home.png"
-                anchors.right: parent.right
-                imageSource: "qrc:/images/"+iconOnPrimaryFolder+imageName
-                onClicked: {
-                    if(navPane.depth < 5) {
-                        navPane.pushNextPage()
-                    } else {
-                        navPane.goToPage(1)
-                    }
-                }
-            } // footer FAB
-        } // footer row
-    } // footer Pane
+        anchors.bottom: parent.bottom
+        imageSource: "qrc:/images/"+iconOnPrimaryFolder+imageName
+        onClicked: {
+            if(navPane.depth < 5) {
+                navPane.pushNextPage()
+            } else {
+                navPane.goToPage(1)
+            }
+        }
+    } // FAB
 
     StackView {
         id: navPane
