@@ -104,5 +104,37 @@
         <file>images/white/x48/directions@2x.png</file>
         <file>images/white/x48/directions@3x.png</file>
         <file>images/white/x48/directions@4x.png</file>
+        <file>images/black/home.png</file>
+        <file>images/black/home@2x.png</file>
+        <file>images/black/home@3x.png</file>
+        <file>images/black/home@4x.png</file>
+        <file>images/black/x18/home.png</file>
+        <file>images/black/x18/home@2x.png</file>
+        <file>images/black/x18/home@3x.png</file>
+        <file>images/black/x18/home@4x.png</file>
+        <file>images/black/x36/home.png</file>
+        <file>images/black/x36/home@2x.png</file>
+        <file>images/black/x36/home@3x.png</file>
+        <file>images/black/x36/home@4x.png</file>
+        <file>images/black/x48/home.png</file>
+        <file>images/black/x48/home@2x.png</file>
+        <file>images/black/x48/home@3x.png</file>
+        <file>images/black/x48/home@4x.png</file>
+        <file>images/white/home.png</file>
+        <file>images/white/home@2x.png</file>
+        <file>images/white/home@3x.png</file>
+        <file>images/white/home@4x.png</file>
+        <file>images/white/x18/home.png</file>
+        <file>images/white/x18/home@2x.png</file>
+        <file>images/white/x18/home@3x.png</file>
+        <file>images/white/x18/home@4x.png</file>
+        <file>images/white/x36/home.png</file>
+        <file>images/white/x36/home@2x.png</file>
+        <file>images/white/x36/home@3x.png</file>
+        <file>images/white/x36/home@4x.png</file>
+        <file>images/white/x48/home.png</file>
+        <file>images/white/x48/home@2x.png</file>
+        <file>images/white/x48/home@3x.png</file>
+        <file>images/white/x48/home@4x.png</file>
     </qresource>
 </RCC>

@@ -87,21 +87,25 @@ ApplicationWindow {
         text: qsTr("A simple Stacked - Pages APP")
     }
 
-    // open question: HowTo place FAB at bottom-right without hiding complete width
+    // open question: HowTo place FAB at bottom-right without overlapping space at left side
     footer: Pane {
         anchors.right: parent.right
         RowLayout {
             anchors.fill: parent
-            visible: navPane.depth < 5
             FloatingActionButton {
+                property string imageName: navPane.depth < 5? "/directions.png" : "/home.png"
                 anchors.right: parent.right
-                imageSource: "qrc:/images/"+iconOnPrimaryFolder+"/directions.png"
+                imageSource: "qrc:/images/"+iconOnPrimaryFolder+imageName
                 onClicked: {
-                    navPane.pushNextPage()
+                    if(navPane.depth < 5) {
+                        navPane.pushNextPage()
+                    } else {
+                        navPane.goToPage(1)
+                    }
                 }
-            }
-        }
-    }
+            } // footer FAB
+        } // footer row
+    } // footer Pane
 
     StackView {
         id: navPane
