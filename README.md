@@ -8,9 +8,9 @@ Sample APP - Qt 5.7+ - Android iOS
 This app is part of ekke's blog series about mobile x-platform development:
 http://j.mp/qt-x
 
-This is not a real-live app - this app demonstrates the use of Material style and new Qt Quick Controls 2
+This is not a real-life app - this app demonstrates the use of Material style and new Qt Quick Controls 2
 
-This app is a follow-up to http://j.mp/qt-one-page-x - please read this blog and explore the first app before following here
+This app is a follow-up to http://j.mp/qt-one-page-x - please read this blog and explore the first app (https://github.com/ekke/one_page_x) before following here
 
 The topics of this second sample app:
 
@@ -28,7 +28,7 @@ Strings are marked as translatable, but not translated. See the first app to lea
 This second sample app is a simple app only to demonstrate navigation through stacked pages
  
 read more about this app here:
-http://j.mp/qt-stacked_pages-x
+http://bit.ly/qt-stacked-pages-x
 
 This app needs Qt 5.7 Beta and will be updated as soon as Qt 5.7 RC is out with different namespace for Qt QUick Controls 2 (qt.labs.controls)
 
