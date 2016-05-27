@@ -23,6 +23,7 @@ Button {
         verticalAlignment: Text.AlignVCenter
         elide: Text.ElideRight
         font.capitalization: Font.AllUppercase
+        font.weight: Font.Medium
     }
     background:
         Rectangle {
