@@ -14,9 +14,16 @@ The topics of this secont sample app:
 
 * more Qt Quick Controls 2 stuff: Buttons (Raised Buttons and Flat Buttons)
 * Navigation with StackView: pop(), push(), find()
+* go up and down page-by-page or jump back/force
+* Navigation with Android bottom Back-key
+* navigation with Android Back Button in Titlebar (ToolBar)
+* Navigation with Buttons and Floating Action Button
 * Management of StackView to implement business-logic - simplified with init() and cleanup() functions
+* Dark Theme and selecting primary and accent color from options menu in ToolBar
 
-The app is a simple app only to demonstrate navigation through stacked pages
+Strings are marked as translatable, but not translated. See the first app to learn about i18n
+
+This second sample app is a simple app only to demonstrate navigation through stacked pages
  
 read more about this app here:
 http://j.mp/qt-stacked_pages-x
