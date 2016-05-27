@@ -6,10 +6,15 @@ Sample APP - Qt 5.7+ - Android iOS
 This app is part of ekke's blog series about mobile x-platform development:
 http://j.mp/qt-x
 
-This is not a real-live app - this app demonstrates the use of Material style:
+This is not a real-live app - this app demonstrates the use of Material style and new Qt Quick Controls 2
 
-* first steps with Qt 5.7 and Qt Quick Controls 2
-* Navigation with StackView
+This app is a follow-up to http://j.mp/qt-one-page-x - please read this blog and explore the first app before following here
+
+The topics of this secont sample app:
+
+* more Qt Quick Controls 2 stuff: Buttons (Raised Buttons and Flat Buttons)
+* Navigation with StackView: pop(), push(), find()
+* Management of StackView to implement business-logic - simplified with init() and cleanup() functions
 
 The app is a simple app only to demonstrate navigation through stacked pages
  
