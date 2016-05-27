@@ -11,6 +11,7 @@ Flickable {
     contentHeight: root.implicitHeight
     // StackView manages this, so please no anchors here
     // anchors.fill: parent
+    property string name: "PageFive"
     Pane {
         id: root
         anchors.fill: parent
@@ -24,12 +25,7 @@ Flickable {
             HorizontalDivider{}
             RowLayout {
                 // implicite fillWidth = true
-                spacing: 20
-                Item {
-                    // dummi placeholder for 1 more buttons
-                    Layout.preferredWidth : 1
-                    Layout.fillWidth: true
-                }
+                spacing: 20      
                 ButtonFlat {
                     text: "Pop"
                     textColor: accentColor
@@ -37,12 +33,31 @@ Flickable {
                         navPane.popOnePage()
                     }
                 }
-                Item {
-                    // dummi placeholder for 1 more buttons
-                    Layout.preferredWidth : 1
-                    Layout.fillWidth: true
+                ButtonFlat {
+                    text: "Find Three"
+                    onClicked: {
+                        var stackIndex = navPane.findPage("PageThree")
+                        if(stackIndex >= 0) {
+                            navPane.goToPage(stackIndex + 1)
+                        } else {
+                            statusLabel.text = qsTr("PageThree not found in StackView")
+                        }
+                    }
+                }
+                ButtonFlat {
+                    text: "Back To 3"
+                    onClicked: {
+                        navPane.goToPage(3)
+                    }
                 }
             } // button row
+            HorizontalDivider {}
+            LabelSubheading {
+                id: statusLabel
+                visible: text.length
+                text: ""
+                color: "red"
+            }
         } // col layout
     } // pane root
     ScrollIndicator.vertical: ScrollIndicator { }

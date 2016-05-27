@@ -87,6 +87,7 @@ ApplicationWindow {
         text: qsTr("A simple Stacked - Pages APP")
     }
 
+    // open question: HowTo place FAB at bottom-right without hiding complete width
     footer: Pane {
         anchors.right: parent.right
         RowLayout {
@@ -107,26 +108,38 @@ ApplicationWindow {
         focus: true
         anchors.fill: parent
         initialItem: pageOne
-
+        // support of BACK key
         Keys.onBackPressed: {
             event.accepted = navPane.depth > 1
             popOnePage()
             // if navPane.depth == 1
-            // perhaps ask user if app should quit
+            // perhaps ask user if app should really quit
         }
+        // go one level back in stack
         function popOnePage() {
             var page
             if(navPane.depth > 1) {
+                // check if target page already is on the stack
+                var targetIsUninitialized = false
+                if(!navPane.get(navPane.depth-2)) {
+                    targetIsUninitialized = true
+                }
                 page = pop()
+                if(targetIsUninitialized) {
+                    navPane.currentItem.init()
+                }
             } else {
                 page = get(0)
             }
+            // do cleanup from previous page
             page.cleanup()
-        }
+        } // popOnePage
+
         function pushOnePage(pageComponent) {
             var page = push(pageComponent)
             page.init()
         }
+
         function pushNextPage() {
             switch(navPane.depth) {
             case 1:
@@ -142,9 +155,85 @@ ApplicationWindow {
                 pushOnePage(pageFive)
                 break;
             default:
-                // nothing
+                // nothing - 5 is max
+            }
+        } // pushNextPage
+
+        function findPage(pageName) {
+            var targetPage = find(function(item) {
+                return item.name == pageName;
+            })
+            if(targetPage) {
+                return targetPage.StackView.index
+            } else {
+                console.log("Page not found in StackView: "+pageName)
+                return -1
             }
         }
+
+        function goUpTo(pageNumber) {
+            var count = pageNumber-navPane.depth
+            var pages = new Array (count)
+            for(var i = 0; i < count; i++) {
+                var thePageNumber = navPane.depth+i+1
+                switch(thePageNumber) {
+                case 1:
+                    pages[i] = pageOne
+                    break;
+                case 2:
+                    pages[i] = pageTwo
+                    break;
+                case 3:
+                    pages[i] = pageThree
+                    break;
+                case 4:
+                    pages[i] = pageFour
+                    break;
+                case 5:
+                    pages[i] = pageFive
+                    break;
+                default:
+                    // nothing
+                    return
+                }
+            }
+            var page = push(pages)
+            page.init()
+        } // goUpTo
+
+        function goDownTo(pageNumber) {
+            // check if cleanup must be done for popped pages
+            var count = navPane.depth-pageNumber
+            for(var i = 0; i < count; i++) {
+                 if(navPane.get(navPane.depth-i-1)) {
+                     navPane.get(navPane.depth-i-1).cleanup()
+                 }
+            }
+            // pop all pages until targetPage will be on top
+            // check if target page already is on the stack
+            var targetIsUninitialized = false
+            if(!navPane.get(pageNumber-1)) {
+                targetIsUninitialized = true
+            }
+            // don't forget to set StackView.ForceLoad
+            // otherwise if get() is null and get(null) means jump to root
+            pop(navPane.get(pageNumber-1, StackView.ForceLoad))
+            if(targetIsUninitialized) {
+                navPane.get(pageNumber-1).init()
+            }
+        } // goDownTo
+
+        function goToPage(pageNumber) {
+            if(pageNumber == navPane.depth) {
+                // it's the current page
+                return
+            }
+            if(pageNumber > navPane.depth) {
+                goUpTo(pageNumber)
+                return
+            }
+            goDownTo(pageNumber)
+        } // goToPage
     } // navPane
 
     Component {

@@ -11,6 +11,7 @@ Flickable {
     contentHeight: root.implicitHeight
     // StackView manages this, so please no anchors here
     // anchors.fill: parent
+    property string name: "PageOne"
     Pane {
         id: root
         anchors.fill: parent
@@ -25,6 +26,11 @@ Flickable {
             RowLayout {
                 // implicite fillWidth = true
                 spacing: 20
+                Item {
+                    // dummi placeholder
+                    Layout.preferredWidth : 1
+                    Layout.fillWidth: true
+                }
                 ButtonRaised {
                     text: "Push Two"
                     onClicked: {
@@ -32,8 +38,8 @@ Flickable {
                     }
                 }
                 Item {
-                    // dummi placeholder for up to 2 more buttons
-                    Layout.preferredWidth : 2
+                    // dummi placeholder
+                    Layout.preferredWidth : 1
                     Layout.fillWidth: true
                 }
             } // button row

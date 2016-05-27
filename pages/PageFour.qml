@@ -11,6 +11,7 @@ Flickable {
     contentHeight: root.implicitHeight
     // StackView manages this, so please no anchors here
     // anchors.fill: parent
+    property string name: "PageFour"
     Pane {
         id: root
         anchors.fill: parent
@@ -26,27 +27,30 @@ Flickable {
                 // implicite fillWidth = true
                 spacing: 20
                 ButtonFlat {
-                    text: "Push Five"
-                    onClicked: {
-                        navPane.pushOnePage(pageFive)
-                    }
-                }
-                ButtonFlat {
                     text: "Pop"
                     textColor: accentColor
                     onClicked: {
                         navPane.popOnePage()
                     }
                 }
+                ButtonFlat {
+                    text: "Push Five"
+                    onClicked: {
+                        navPane.pushOnePage(pageFive)
+                    }
+                }
                 Item {
-                    // dummi placeholder for up to 2 more buttons
+                    // dummi placeholder
                     Layout.preferredWidth : 1
                     Layout.fillWidth: true
                 }
             } // button row
             HorizontalDivider {}
             LabelSubheading {
-                text: navPane.get(2).whoAmI()
+                // to load the page if uninitialized, use:
+                // text: navPane.get(2, StackView.ForceLoad).whoAmI()
+                // default is StackView.DontLoad, so check for null !
+                text: navPane.get(2)? navPane.get(2, StackView.ForceLoad).whoAmI() : "n/a"
             }
         } // col layout
     } // pane root
