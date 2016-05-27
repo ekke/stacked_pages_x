@@ -10,7 +10,7 @@ This is not a real-live app - this app demonstrates the use of Material style an
 
 This app is a follow-up to http://j.mp/qt-one-page-x - please read this blog and explore the first app before following here
 
-The topics of this secont sample app:
+The topics of this second sample app:
 
 * more Qt Quick Controls 2 stuff: Buttons (Raised Buttons and Flat Buttons)
 * Navigation with StackView: pop(), push(), find()
