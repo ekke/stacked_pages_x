@@ -44,16 +44,19 @@ This sample app uses Material Design with UI Controls provided by Qt 5.7+ and wa
 
 A detailed description you'll find at my blog: http://j.mp/qt-stacked_pages-x
 
-### Screenshots
+## Screenshots
 
-## Screenshot Android
+### Screenshot Android Page 1
 ![alt tag](https://appbus.files.wordpress.com/2016/05/android_page_01.png "Screenshot Android Page 1")
 
-## Screenshot Android
+### Screenshot Android Page 2
 ![alt tag](https://appbus.files.wordpress.com/2016/05/android_page_02.png "Screenshot Android Page 2")
 
-## Screenshot ios
+### Screenshot ios Page 2
 ![alt tag](https://appbus.files.wordpress.com/2016/05/ios_page_02.png "Screenshot Android Page 2")
 
-## Screenshot Android
+### Screenshot Android Page 3
 ![alt tag](https://appbus.files.wordpress.com/2016/05/android_page_03.png "Screenshot Android Page 3")
+
+more screenshots here:
+http://bit.ly/qt-stacked-pages-x
