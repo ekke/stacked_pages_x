@@ -31,13 +31,13 @@ Flickable {
                     leftPadding: 10
                     rightPadding: 10
                     wrapMode: Text.WordWrap
-                    text: qsTr("This is page 3 of 5\nHere we're using another kind of Material Buttons: Flat Buttons\n\nNavigate back to previous page:\n* Button labeled 'POP'\n* Back Button placed top-left in Titlebar\n* on Android: System Back Button at bottom left\n\nNavigate forward to the next page 'PageFour' using the FAB or Button 'PUSH FOUR'\n\n")
+                    text: qsTr("This is page 3 of 5\nHere we're using another kind of Material Buttons: Flat Buttons\n\nNavigate back to previous page:\n* Button labeled 'POP'\n* Back Button placed top-left in Titlebar\n* on Android: System Back Button at bottom left\n\nNavigate forward to the next page 'PageFour' using the FAB or Button 'PUSH 4'\n\n")
                 }
             }
             HorizontalDivider {}
             RowLayout {
                 // implicite fillWidth = true
-                spacing: 20
+                spacing: 10
                 ButtonFlat {
                     text: "Pop"
                     textColor: accentColor
@@ -46,7 +46,7 @@ Flickable {
                     }
                 }
                 ButtonFlat {
-                    text: "Push Four"
+                    text: "Push 4"
                     onClicked: {
                         navPane.pushOnePage(pageFour)
                     }

@@ -12,8 +12,8 @@ Button {
     property alias textColor: buttonText.color
     Layout.fillWidth: true
     Layout.preferredWidth : 1
-    leftPadding: 8
-    rightPadding: 8
+    leftPadding: 6
+    rightPadding: 6
     contentItem: Text {
         id: buttonText
         text: button.text

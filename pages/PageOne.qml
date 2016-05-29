@@ -31,20 +31,20 @@ Flickable {
                     leftPadding: 10
                     rightPadding: 10
                     wrapMode: Text.WordWrap
-                    text: qsTr("This is the root page of a StackView - the 'initial Item'\n\nFrom here you can navigate forward to the next page using the 'FloatingActionButton' (FAB) placed at bottom-right or using the Raised Button named 'PUSH TWO'\n\nThis StackView can stack a maximum of 5 pages including this root page.\n\nFrom 'Option Menu'(three dots) placed top right in ToolBar you can switch Theme and change primary / accent\n")
+                    text: qsTr("This is the root page of a StackView - the 'initial Item'\n\nFrom here you can navigate forward to the next page using the 'FloatingActionButton' (FAB) placed at bottom-right or using the Raised Button named 'PUSH 2'\n\nThis StackView can stack a maximum of 5 pages including this root page.\n\nFrom 'Option Menu'(three dots) placed top right in ToolBar you can switch Theme and change primary / accent\n")
                 }
             }
             HorizontalDivider {}
             RowLayout {
                 // implicite fillWidth = true
-                spacing: 20
+                spacing: 10
                 Item {
                     // dummi placeholder
                     Layout.preferredWidth : 1
                     Layout.fillWidth: true
                 }
                 ButtonRaised {
-                    text: "Push Two"
+                    text: "Push 2"
                     onClicked: {
                         navPane.pushOnePage(pageTwo)
                     }

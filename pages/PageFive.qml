@@ -31,13 +31,13 @@ Flickable {
                     leftPadding: 10
                     rightPadding: 10
                     wrapMode: Text.WordWrap
-                    text: qsTr("This is page 5 of 5 - the top most page\n\nNavigate back to previous page:\n* Button labeled 'POP'\n* Back Button placed top-left in Titlebar\n* on Android: System Back Button at bottom left\n\nNavigate back to the root using the FAB\n\nJump back to 'PageThree' using Button 'BACK TO 3'\n'PageFour' will automatically pop()\n\nButton 'FIND THREE' tries to find 'PageThree' by property 'name'.\nFind will only work if page is instantiated. More details in blog entry.\n")
+                    text: qsTr("This is page 5 of 5 - the top most page\n\nNavigate back to previous page:\n* Button labeled 'POP'\n* Back Button placed top-left in Titlebar\n* on Android: System Back Button at bottom left\n\nNavigate back to the root using the FAB\n\nJump back to 'PageThree' using Button 'BACK TO 3'\n'PageFour' will automatically pop()\n\nButton 'FIND 3' tries to find 'PageThree' by property 'name'.\nFind will only work if page is instantiated. More details in blog entry.\n")
                 }
             }
             HorizontalDivider{}
             RowLayout {
                 // implicite fillWidth = true
-                spacing: 20      
+                spacing: 10
                 ButtonFlat {
                     text: "Pop"
                     textColor: accentColor
@@ -46,7 +46,7 @@ Flickable {
                     }
                 }
                 ButtonFlat {
-                    text: "Find Three"
+                    text: "Find 3"
                     onClicked: {
                         var stackIndex = navPane.findPage("PageThree")
                         if(stackIndex >= 0) {
