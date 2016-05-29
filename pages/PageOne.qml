@@ -12,6 +12,7 @@ Flickable {
     // StackView manages this, so please no anchors here
     // anchors.fill: parent
     property string name: "PageOne"
+    property string title: qsTr("Root Page in Stack of max 5")
     Pane {
         id: root
         anchors.fill: parent

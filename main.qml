@@ -83,7 +83,8 @@ ApplicationWindow {
     //
 
     header: StackTextTitle {
-        text: qsTr("A simple Stacked - Pages APP")
+        id: titleBar
+        text: navPane.currentItem? navPane.currentItem.title : qsTr("A simple Stacked - Pages APP")
     }
 
     // primaryDarkColor is used because FAB can overlap Raised Buttons colored in primaryColor
@@ -116,6 +117,10 @@ ApplicationWindow {
             // if navPane.depth == 1
             // perhaps ask user if app should really quit
         }
+        onCurrentItemChanged: {
+
+        }
+
         // go one level back in stack
         function popOnePage() {
             var page
