@@ -118,6 +118,51 @@ ApplicationWindow {
             // perhaps ask user if app should really quit
         }
 
+        // some kayboard shortcuts if:
+        // * running on BlackBerry PRIV (Slider with hardware keyboard)
+        // * or attached Bluetooth Keyboard
+        // Jump to Page 1 (w), 2 (e), 3 (r), 4 (s), 5(d)
+        Shortcut {
+            sequence: "w"
+            onActivated: navPane.goToPage(1)
+        }
+        Shortcut {
+            sequence: "Alt+w"
+            onActivated: navPane.goToPage(1)
+        }
+        Shortcut {
+            sequence: "e"
+            onActivated: navPane.goToPage(2)
+        }
+        Shortcut {
+            sequence: "Alt+e"
+            onActivated: navPane.goToPage(2)
+        }
+        Shortcut {
+            sequence: "r"
+            onActivated: navPane.goToPage(3)
+        }
+        Shortcut {
+            sequence: "Alt+r"
+            onActivated: navPane.goToPage(3)
+        }
+        Shortcut {
+            sequence: "s"
+            onActivated: navPane.goToPage(4)
+        }
+        Shortcut {
+            sequence: "Alt+s"
+            onActivated: navPane.goToPage(4)
+        }
+        Shortcut {
+            sequence: "d"
+            onActivated: navPane.goToPage(5)
+        }
+        Shortcut {
+            sequence: "Alt+d"
+            onActivated: navPane.goToPage(5)
+        }
+
         // go one level back in stack
         function popOnePage() {
             var page
