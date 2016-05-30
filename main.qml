@@ -114,14 +114,19 @@ ApplicationWindow {
         Keys.onBackPressed: {
             event.accepted = navPane.depth > 1
             popOnePage()
-            // if navPane.depth == 1
-            // perhaps ask user if app should really quit
+            if(navPane.depth == 1) {
+                // perhaps ask user if app should really quit
+                var page = navPane.get(0)
+                page.cleanup()
+            }
         }
 
         // some kayboard shortcuts if:
         // * running on BlackBerry PRIV (Slider with hardware keyboard)
         // * or attached Bluetooth Keyboard
         // Jump to Page 1 (w), 2 (e), 3 (r), 4 (s), 5(d)
+        // Goto next page: 'Space'
+        // Goto previous page: 'Shift'+'Space'
         Shortcut {
             sequence: "w"
             onActivated: navPane.goToPage(1)
@@ -162,25 +167,32 @@ ApplicationWindow {
             sequence: "Alt+d"
             onActivated: navPane.goToPage(5)
         }
+        Shortcut {
+            sequence: " "
+            onActivated: navPane.pushNextPage()
+        }
+        Shortcut {
+            sequence: "Shift+ "
+            onActivated: navPane.popOnePage()
+        }
 
         // go one level back in stack
         function popOnePage() {
-            var page
-            if(navPane.depth > 1) {
-                // check if target page already is on the stack
-                var targetIsUninitialized = false
-                if(!navPane.get(navPane.depth-2)) {
-                    targetIsUninitialized = true
-                }
-                page = pop()
-                if(targetIsUninitialized) {
-                    navPane.currentItem.init()
-                }
-            } else {
-                page = get(0)
+            if(navPane.depth == 1) {
+                return
+            }
+            // check if target page already is on the stack
+            var targetIsUninitialized = false
+            if(!navPane.get(navPane.depth-2)) {
+                targetIsUninitialized = true
+            }
+            var page = pop()
+            if(targetIsUninitialized) {
+                navPane.currentItem.init()
             }
             // do cleanup from previous page
             page.cleanup()
+            return
         } // popOnePage
 
         function pushOnePage(pageComponent) {
@@ -253,9 +265,9 @@ ApplicationWindow {
             // check if cleanup must be done for popped pages
             var count = navPane.depth-pageNumber
             for(var i = 0; i < count; i++) {
-                 if(navPane.get(navPane.depth-i-1)) {
-                     navPane.get(navPane.depth-i-1).cleanup()
-                 }
+                if(navPane.get(navPane.depth-i-1)) {
+                    navPane.get(navPane.depth-i-1).cleanup()
+                }
             }
             // pop all pages until targetPage will be on top
             // check if target page already is on the stack
