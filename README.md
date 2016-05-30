@@ -1,5 +1,3 @@
-WORK IN  PROGRESS - WAIT FOR BLOG OR TWEET BEFORE STARTING
-
 # stacked_pages_x
 Sample APP - Qt 5.7+ - Android iOS
 
@@ -8,7 +6,7 @@ Sample APP - Qt 5.7+ - Android iOS
 This app is part of ekke's blog series about mobile x-platform development:
 http://j.mp/qt-x
 
-This is not a real-life app - this app demonstrates the use of Material style and new Qt Quick Controls 2
+This is not a real-life app - this app only demonstrates the use of Material style and new Qt Quick Controls 2
 
 This app is a follow-up to http://j.mp/qt-one-page-x - please read this blog and explore the first app (https://github.com/ekke/one_page_x) before following here
 
@@ -20,10 +18,11 @@ The topics of this second sample app:
 * Navigation with Android bottom Back-key
 * navigation with Android Back Button in Titlebar (ToolBar)
 * Navigation with Buttons and Floating Action Button
+* Navigation with Shortcut (physical keyboard attached)
 * Management of StackView to implement business-logic - simplified with init() and cleanup() functions
 * Dark Theme and selecting primary and accent color from options menu in ToolBar
 
-Strings are marked as translatable, but not translated. See the first app to learn about i18n
+Strings are marked as translatable, but not translated yet. See the first app to learn about i18n.
 
 This second sample app is a simple app only to demonstrate navigation through stacked pages
  
