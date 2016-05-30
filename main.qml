@@ -192,7 +192,6 @@ ApplicationWindow {
             }
             // do cleanup from previous page
             page.cleanup()
-            return
         } // popOnePage
 
         function pushOnePage(pageComponent) {
