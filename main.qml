@@ -117,9 +117,6 @@ ApplicationWindow {
             // if navPane.depth == 1
             // perhaps ask user if app should really quit
         }
-        onCurrentItemChanged: {
-
-        }
 
         // go one level back in stack
         function popOnePage() {
