@@ -11,7 +11,7 @@ import "pages"
 // This app is NOT a production ready app
 // This app's goal is only to help you to understand some concepts
 // see blog http://j.mp/qt-x to learn about Qt 5.7 for Material - styled Android or iOS Apps
-// learn about this one_page_x app from this article: http://j.mp/qt-one-page-x
+// learn about this stacked_pages_x app from this article: http://j.mp/qt-stacked-pages-x
 // ekke (Ekkehard gentz) @ekkescorner
 
 ApplicationWindow {
@@ -121,7 +121,7 @@ ApplicationWindow {
             }
         }
 
-        // some kayboard shortcuts if:
+        // some keyboard shortcuts if:
         // * running on BlackBerry PRIV (Slider with hardware keyboard)
         // * or attached Bluetooth Keyboard
         // Jump to Page 1 (w), 2 (e), 3 (r), 4 (s), 5(d)
@@ -305,7 +305,7 @@ ApplicationWindow {
                 page.init()
             }
         }
-    } // pageTwo
+    } // pageOne
 
     Component {
         id: pageTwo
