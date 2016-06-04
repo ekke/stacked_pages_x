@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
     QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-    qputenv("QT_LABS_CONTROLS_STYLE", "material");
+    qputenv("QT_QUICK_CONTROLS_STYLE", "material");
     QGuiApplication app(argc, argv);
 
     QTranslator translator;
