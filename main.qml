@@ -102,6 +102,9 @@ ApplicationWindow {
             } else {
                 navPane.goToPage(1)
             }
+            // Must reset focus since 5.7 RC
+            // if not, ShortCuts not working well
+            resetFocus()
         }
     } // FAB
 

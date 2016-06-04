@@ -29,7 +29,7 @@ This second sample app is a simple app only to demonstrate navigation through st
 read more about this app here:
 http://bit.ly/qt-stacked-pages-x
 
-This app needs Qt 5.7 Beta and will be updated as soon as Qt 5.7 RC is out with different namespace for Qt QUick Controls 2 (qt.labs.controls)
+This app needs Qt 5.7 RC or greater
 
 ## License Information
 [see LICENSE ( The Unlicense )](LICENSE)
