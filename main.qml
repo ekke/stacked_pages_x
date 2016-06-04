@@ -128,8 +128,8 @@ ApplicationWindow {
         // * running on BlackBerry PRIV (Slider with hardware keyboard)
         // * or attached Bluetooth Keyboard
         // Jump to Page 1 (w), 2 (e), 3 (r), 4 (s), 5(d)
-        // Goto next page: 'Space'
-        // Goto previous page: 'Shift'+'Space'
+        // Goto next page: 'n'
+        // Goto previous page: 'p'
         Shortcut {
             sequence: "w"
             onActivated: navPane.goToPage(1)
@@ -170,12 +170,19 @@ ApplicationWindow {
             sequence: "Alt+d"
             onActivated: navPane.goToPage(5)
         }
+        // TODO Bugreport 5.7 RC
+        // Shortcut Space / Shift Space
+        // sometimes not working correct
+        // sometimes Space / Shift Space are hitting a Button from Page
+        // this then causes two actions to be mixed: a) Button - clicked, b) Shortcut
+        // n == NEXT
         Shortcut {
-            sequence: " "
+            sequence: "n" //" "
             onActivated: navPane.pushNextPage()
         }
+        // p == PREVIOUS
         Shortcut {
-            sequence: "Shift+ "
+            sequence: "p" //"Shift+ "
             onActivated: navPane.popOnePage()
         }
 
