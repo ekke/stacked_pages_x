@@ -11,6 +11,7 @@ Button {
     // default: primaryColor
     property alias backgroundColor: buttonBackground.color
     property bool showShadow: false
+    focusPolicy: Qt.NoFocus
     contentItem:
         Item {
         implicitHeight: 24

@@ -12,6 +12,7 @@ Button {
     property alias textColor: buttonText.color
     // default: primaryColor
     property alias buttonColor: buttonBackground.color
+    focusPolicy: Qt.NoFocus
     Layout.fillWidth: true
     Layout.preferredWidth : 1
     leftPadding: 6

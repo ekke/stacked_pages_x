@@ -102,9 +102,6 @@ ApplicationWindow {
             } else {
                 navPane.goToPage(1)
             }
-            // Must reset focus since 5.7 RC
-            // if not, ShortCuts not working well
-            resetFocus()
         }
     } // FAB
 
@@ -170,19 +167,22 @@ ApplicationWindow {
             sequence: "Alt+d"
             onActivated: navPane.goToPage(5)
         }
-        // TODO Bugreport 5.7 RC
-        // Shortcut Space / Shift Space
-        // sometimes not working correct
-        // sometimes Space / Shift Space are hitting a Button from Page
-        // this then causes two actions to be mixed: a) Button - clicked, b) Shortcut
         // n == NEXT
         Shortcut {
-            sequence: "n" //" "
+            sequence: "n"
             onActivated: navPane.pushNextPage()
         }
         // p == PREVIOUS
         Shortcut {
-            sequence: "p" //"Shift+ "
+            sequence: "p"
+            onActivated: navPane.popOnePage()
+        }
+        Shortcut {
+            sequence: " "
+            onActivated: navPane.pushNextPage()
+        }
+        Shortcut {
+            sequence: "Shift+ "
             onActivated: navPane.popOnePage()
         }
 
@@ -349,8 +349,6 @@ ApplicationWindow {
     }
 
     // we can loose the focus if Menu or Popup is opened
-    // TODO: check code if 5.7 RC available because of
-    // https://bugreports.qt.io/browse/QTBUG-53275
     function resetFocus() {
         navPane.focus = true
     }
